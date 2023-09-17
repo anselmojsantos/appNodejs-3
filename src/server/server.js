@@ -42,7 +42,7 @@ appServer.get('app-nodejs-3.vercel.app/',async(req, res)=>{
 });
 //const database = new DatabaseMemory()
 const database = new DatabasePostgres()
-appServer.post('app-nodejs-3.vercel.app/video',async (req, res)=>{
+appServer.post('/video',async (req, res)=>{
     const {title, description, duration} = req.body;
      
    await database.create({
@@ -55,7 +55,7 @@ appServer.post('app-nodejs-3.vercel.app/video',async (req, res)=>{
 
 });
 
-appServer.put('app-nodejs-3.vercel.app/video/:id',async (req, res)=>{
+appServer.put('/video/:id',async (req, res)=>{
     const videoId = req.params.id
     const {title, description, duration} = req.body;
      
@@ -67,7 +67,7 @@ appServer.put('app-nodejs-3.vercel.app/video/:id',async (req, res)=>{
     return res.status(204).send()
 });
 
-appServer.delete('app-nodejs-3.vercel.app/video/:id',async (req, res)=>{
+appServer.delete('/video/:id',async (req, res)=>{
     const videoId = req.params.id
 
     await database.delete(videoId)

@@ -1,0 +1,28 @@
+
+POST http://localhost:3000/video;
+Content-Type: application/json
+
+{
+    "title":"Video node",
+    "description":"Esse é o vídeo R1",
+    "duration": 180
+}
+
+###
+
+GET http://localhost:3000/video
+
+###
+
+PUT  http://localhost:3000/video/4e8814ae-90fd-4f6f-9a56-5bcd0b817bec;
+Content-Type: application/json
+
+{
+    "title":"Video R2",
+    "description":"Esse é o vídeo R2 modificado no bd",
+    "duration": 200
+}
+
+###
+
+DELETE http://localhost:3000/video/4e8814ae-90fd-4f6f-9a56-5bcd0b817bec;

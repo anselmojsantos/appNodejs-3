@@ -34,7 +34,7 @@ import { DatabasePostgres } from "../db/databese-postgres.js";
 
 const appServer = fastify();
 
-appServer.get('app-nodejs-3.vercel.app/video',async(req, res)=>{
+appServer.get('app-nodejs-3.vercel.app/',async(req, res)=>{
     const search = req.query.search
     const videos = await database.list(search)
     return videos
